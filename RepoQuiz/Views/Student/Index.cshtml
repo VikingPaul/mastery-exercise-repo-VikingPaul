@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Student Table.</h2>
+
+
+
+<table class="table table-bordered table-striped text-center">
+    <tr>
+        <th class="text-center">First name</th>
+        <th class="text-center">Last name</th>
+        <th class="text-center">Major</th>
+    </tr>
+    @{
+        foreach (var stud in ViewBag.Students)
+        {
+            <tr>
+                <td>@stud.FirstName</td>
+                <td>@stud.LastName</td>
+                <td>@stud.Major</td>
+            </tr>
+        }
+    }
+</table>
