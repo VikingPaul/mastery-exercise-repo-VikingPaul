@@ -24,5 +24,14 @@ namespace RepoQuiz.Tests.DAL
             Assert.IsNotNull(Name.LastName);
             Assert.IsNotNull(Name.Major);
         }
+
+        [TestMethod]
+        public void NotSameStudentTwice()
+        {
+            var RandoName = new NameGenerator();
+            Student Name = RandoName.CreateNew();
+            Student Name2 = RandoName.CreateNew();
+            Assert.AreNotEqual(Name, Name2);
+        }
     }
 }
